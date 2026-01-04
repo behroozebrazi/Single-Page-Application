@@ -1,2 +1,28 @@
-# Single-Page-Application
-A JavaScript-based Single Page Application (SPA) that dynamically loads and updates content on the client side, reducing server requests and improving performance. The project demonstrates modern SPA concepts such as client-side routing, state management, and component-based architecture.
+# Single Page Application (SPA) Router
+A minimal Single Page Application (SPA) built with JavaScript.
+
+Supports client-side routing using the History API without page reloads.<br><br>
+
+---
+
+## Features
+
+- Navigate between pages without refreshing
+- Three pages: Home, Video, Post
+- Each page is a separate JS module in the pages folder
+
+---
+
+## Project Structure
+```
+index.html
+style.css
+app.js
+/pages
+    home.js
+    video.js
+    post.js
+```
+- app.js imports page modules and calls their render functions based on location.pathname
+- URL updates using history.pushState()
+- Back/forward navigation handled with popstate
