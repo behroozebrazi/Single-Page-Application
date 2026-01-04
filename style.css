@@ -69,16 +69,25 @@ a:hover {
   width: 90%;
   height: 80%;
   margin: 1rem;
-  padding: 0;
+  padding: 1rem;
   position: relative;
-  display: flex;
+  display: inline-block;
   justify-content: center;
   box-shadow: 0px 0px 2px yellowgreen;
   border-radius: 10px;
-  line-height: 1.5rem;
+  line-height: 1.8rem;
   font-size: medium;
 }
 
+#app h1 {
+  margin: 0.5rem;
+  padding: 0;
+  display: inline;
+}
+
 #app p {
+  margin: 0;
+  padding: 0;
   color: #404040;
+  display: inline;
 }

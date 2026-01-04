@@ -1,3 +1,8 @@
+import HomePage from "./pages/home.js"
+import VideoPage from "./pages/video.js"
+import PostPage from "./pages/post.js"
+
+const page = document.querySelector('#app')
 
 // Take url from anchor tag <a>, and place it in the browser's address bar (link)
 const navTo = (newUrl) => {
@@ -14,21 +19,20 @@ const navTo = (newUrl) => {
 // Managing paths (url)
 const router = () => {
   const routes = [
-    { path: '/', view: () => console.log('Route /') },
-    { path: '/video', view: () => console.log('Route Video') },
-    { path: '/post', view: () => console.log('Route Post') }
+    { path: '/', view: HomePage },
+    { path: '/video', view: VideoPage },
+    { path: '/post', view: PostPage }
   ]
   // check the current location
   const matchRoutes = routes.map(item => {
     return { route: item, isMatch: location.pathname === item.path }
   })
   // redirect the current location if it does not exist in matchRoutes
-  let matchUrl = matchRoutes.find(item => item.isMatch)
-  if (!matchUrl) // null
-    matchUrl = { route: routes[0], isMatch: true }
-
-
-  console.log(matchUrl.route.view())
+  let currentUrl = matchRoutes.find(item => item.isMatch)
+  if (!currentUrl) // null
+    currentUrl = { route: routes[0], isMatch: true }
+  // load/add new function/page to DOM
+  page.innerHTML = currentUrl.route.view()
 }
 
 // this listener is run when the link in the address bar is changed
@@ -45,7 +49,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
     }
   })
 
-  // update browser url
+  // update browser's url
   router()
 })
-
