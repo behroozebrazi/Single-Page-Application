@@ -13,6 +13,23 @@ Supports client-side routing using the History API without page reloads.<br><br>
 
 ---
 
+## Screenshots
+
+<table>
+  <tr>
+    <th>Home</th>
+    <th>Video</th>
+    <th>Post</th>
+  </tr>
+  <tr>
+    <td><img src="screenshots/home-page.png" width="100%"></td>
+    <td><img src="screenshots/video-page.png" width="100%"></td>
+    <td><img src="screenshots/post-page.png" width="100%"></td>
+  </tr>
+</table>
+
+---
+
 ## Project Structure
 ```
 index.html
